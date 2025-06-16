@@ -1,4 +1,4 @@
-name: ArmorCode
+name: ArmorCode Release Gate Test
 
 env:
   armorcodehost: https://qa.armorcode.ai
@@ -9,13 +9,15 @@ env:
   buildTool: GITHUB_ACTIONS
   buildNumber: ${{github.run_number}}
   end: 30
-  
+
 on:
-  # Triggers the workflow on push request events
   push:
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-  
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -23,5 +25,16 @@ jobs:
     steps:
       - name: ArmorCode Validation
         run: |
-          wget https://qa.armorcode.ai/static/scripts/slastatus.sh
-          sh slastatus.sh
+          wget https://qa.armorcode.ai/static/scripts/slastatus.sh sh slastatus.sh
+  release_gate_check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run ArmorCode Release Gate
+        uses: ChiragMyOrg/actions/release-gate-action@main
+        with:
+          product: 'azure'
+          subProduct: 'juiceshop'
+          environment: 'Production'
+          mode: 'block'
+          aql: 'scanType=SAST'
+          armorcode_token: ${{ secrets.ARMORCODE_API_TOKEN }}
