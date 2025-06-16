@@ -25,7 +25,8 @@ jobs:
     steps:
       - name: ArmorCode Validation
         run: |
-          wget https://qa.armorcode.ai/static/scripts/slastatus.sh sh slastatus.sh
+          wget https://qa.armorcode.ai/static/scripts/slastatus.sh 
+          sh slastatus.sh
   release_gate_check:
     runs-on: ubuntu-latest
     steps:
