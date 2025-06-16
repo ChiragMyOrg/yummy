@@ -2,8 +2,8 @@ name: ArmorCode Release Gate Test
 
 env:
   armorcodehost: https://qa.armorcode.ai
-  product: cmbb
-  subProduct: cmsbb
+  product: bbcm
+  subProduct: bbscm
   environment: Production
   token: ${{secrets.ARMORCODE_API_TOKEN}}
   buildTool: GITHUB_ACTIONS
