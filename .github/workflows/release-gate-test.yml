@@ -5,7 +5,7 @@ env:
   product: chirag
   subProduct: cm
   environment: Production
-  token: ${{secrets.ARMORCODE_TOKEN}}
+  token: ${{secrets.ARMORCODE_API_TOKEN}}
   buildTool: GITHUB_ACTIONS
   buildNumber: ${{github.run_number}}
   end: 30
