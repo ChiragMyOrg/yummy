@@ -1,5 +1,15 @@
 name: ArmorCode Release Gate Test
 
+env:
+  armorcodehost: https://qa.armorcode.ai
+  product: azure
+  subProduct: juiceshop
+  environment: Production
+  token: ${{secrets.ARMORCODE_TOKEN}}
+  buildTool: GITHUB_ACTIONS
+  buildNumber: ${{github.run_number}}
+  end: 30
+
 on:
   push:
     branches:
@@ -9,6 +19,14 @@ on:
       - main
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    # ArmorCode Validation Step
+    steps:
+      - name: ArmorCode Validation
+        run: |
+          wget https://qa.armorcode.ai/static/scripts/slastatus.sh
+          sh slastatus.sh
   release_gate_check:
     runs-on: ubuntu-latest
     steps:
