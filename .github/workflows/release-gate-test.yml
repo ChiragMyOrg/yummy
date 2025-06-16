@@ -24,4 +24,5 @@ jobs:
       - name: ArmorCode Validation
         run: |
           wget https://qa.armorcode.ai/static/scripts/slastatus.sh
+          echo "✅ Successfully fetched slastatus.sh from ArmorCode"
           sh slastatus.sh
