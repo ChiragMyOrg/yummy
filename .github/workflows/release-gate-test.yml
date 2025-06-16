@@ -8,7 +8,8 @@ env:
   token: ${{secrets.ARMORCODE_TOKEN}}
   buildTool: GITHUB_ACTIONS
   buildNumber: ${{github.run_number}}
-  end: 30
+  current: 2
+  end: 3
 
 on:
   push:
