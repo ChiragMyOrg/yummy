@@ -2,8 +2,8 @@ name: ArmorCode Release Gate Test
 
 env:
   armorcodehost: https://qa.armorcode.ai
-  product: azure
-  subProduct: juiceshop
+  product: cm
+  subProduct: cms
   environment: Production
   token: ${{secrets.ARMORCODE_TOKEN}}
   buildTool: GITHUB_ACTIONS
