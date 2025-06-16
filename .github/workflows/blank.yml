@@ -7,12 +7,10 @@ jobs:
   release_gate_check:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
+    
       - name: Run ArmorCode Release Gate
         id: armorcode_release_gate
-        uses: yummy/actions/release-gate-action@main
+        uses: ChiragMyOrg/yummy/actions/release-gate-action@main
         with:
           product: 'azure'
           subProduct: 'juiceshop'
