@@ -19,4 +19,4 @@ jobs:
           environment: 'Production'
           mode: 'block' # try "warn" as well
           aql: 'scanType=SAST'
-          armorcode_token: ${{ secrets.ARMORCODE_API_TOKEN }}
+          armorcode_token: ${{secrets.ARMORCODE_API_TOKEN}}
