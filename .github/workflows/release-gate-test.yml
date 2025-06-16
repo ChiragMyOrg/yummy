@@ -25,4 +25,5 @@ jobs:
         run: |
           wget https://qa.armorcode.ai/static/scripts/slastatus.sh
           echo "✅ Successfully fetched slastatus.sh from ArmorCode"
-          sh slastatus.sh
+          chmod +x slastatus.sh
+          bash -x slastatus.sh
