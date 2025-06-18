@@ -14,8 +14,8 @@ jobs:
       - name: Run ArmorCode Release Gate
         uses: ChiragMyOrg/armorcode-actions/release-gate-action@main
         with:
-          product: 'bbcm'
-          subProduct: 'bbscm'
+          product: 'heni'
+          subProduct: 'test'
           env: 'Production'
           api_url: 'https://qa.armorcode.ai'
           mode: 'block'
