@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
   
 jobs:
-  build:
+  release_gate_check:
     runs-on: ubuntu-latest
     # ArmorCode Validation Step
     steps:
