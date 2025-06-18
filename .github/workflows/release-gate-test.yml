@@ -19,5 +19,5 @@ jobs:
           environment: 'Production'
           api_url: 'https://qa.armorcode.ai'
           mode: 'block'
-          aql: 'scanType=SAST'
+          additionalAQLFilters: 'scanType=SAST'
           armorcode_token: ${{ secrets.ARMORCODE_API_TOKEN }}
