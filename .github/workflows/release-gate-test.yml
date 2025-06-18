@@ -17,6 +17,7 @@ jobs:
           group_name: 'bbcm'
           sub_group_name: 'bbscm'
           environment: 'Production'
+          api_url: 'https://qa.armorcode.ai'
           mode: 'block'
           aql: 'scanType=SAST'
           armorcode_token: ${{ secrets.ARMORCODE_API_TOKEN }}
