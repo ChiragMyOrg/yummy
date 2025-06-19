@@ -17,7 +17,7 @@ jobs:
           product: 'heni'
           subProduct: 'test'
           env: 'Production'
-          api_url: 'https://qa.armorcode.ai'
+          armorcodeHost: 'https://qa.armorcode.ai'
           mode: 'block'
           additionalAQLFilters: 'scanType=SAST'
-          armorcode_token: ${{ secrets.ARMORCODE_API_TOKEN }}
+          armorcodeAPIToken: ${{ secrets.ARMORCODE_API_TOKEN }}
