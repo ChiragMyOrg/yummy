@@ -20,12 +20,6 @@ jobs:
       - name: Login to Amazon ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
-             
-      - name: Pull Docker image from ECR
-        run: |
-          echo "Pulling image from ${ECR_REGISTRY}/${ECR_REPOSITORY}:${IMAGE_TAG}"
-          docker pull 034025401910.dkr.ecr.us-west-2.amazonaws.com/armorcode-release-gate:latest
-          echo "Image pulled successfully"
       
       - name: Run ArmorCode Release Gate
         uses: docker://034025401910.dkr.ecr.us-west-2.amazonaws.com/armorcode-release-gate:latest
