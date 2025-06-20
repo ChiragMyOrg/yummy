@@ -13,6 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run ArmorCode Release Gate
+        id: armorcode_gate
         uses: docker://public.ecr.aws/r4h5z0d3/armorcode-release-gate:latest
         with:
           product: 'heni'
