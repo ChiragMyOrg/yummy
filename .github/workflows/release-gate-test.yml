@@ -14,7 +14,7 @@ jobs:
     steps:
       - name: Run ArmorCode Release Gate
         id: armorcode_gate
-        uses: ChiragMyOrg/armorcode-actions@main
+        uses: ChiragMyOrg/armorcode-actions/release-gate-action@main
         with:
           product: 'chirag'
           subProduct: 'cm'
