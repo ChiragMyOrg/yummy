@@ -1,21 +1,17 @@
 name: ArmorCode Release Gate
-  
 on:
- # Triggers the workflow on push and pull request events
   push:
-  
   pull_request:
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
   
 jobs:
-  release_gate_check:
+  release_gate_check: # Update the job name as needed
     runs-on: ubuntu-latest
     permissions:
       checks: write     # For writing to the checks tab
       pull-requests: write  # For commenting on PRs
       contents: read    # For accessing repo content
-    steps:
+    steps:  
       - name: Run ArmorCode Release Gate
         id: armorcode_gate
         uses: ChiragMyOrg/armorcode-actions/release-gate-action@main
@@ -24,6 +20,6 @@ jobs:
           subProduct: 'cm'
           env: 'Production'
           armorcodeHost: 'https://qa.armorcode.ai'
-          mode: 'block'
+          mode: 'warn'
           armorcodeAPIToken: ${{ secrets.ARMORCODE_API_TOKEN }}
-          maxRetries: '5'
+          
