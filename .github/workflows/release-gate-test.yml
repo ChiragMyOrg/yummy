@@ -22,5 +22,5 @@ jobs:
           armorcodeHost: 'https://qa.armorcode.ai'
           mode: 'block'
           armorcodeAPIToken: ${{ secrets.ARMORCODE_API_TOKEN }}
-          githubToken: ${{ secrets.API_TOKEN_GITHUB }}
+          github-token: ${{ secrets.API_TOKEN_GITHUB }}
           
