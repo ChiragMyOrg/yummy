@@ -16,11 +16,11 @@ jobs:
         id: armorcode_gate
         uses: ChiragMyOrg/armorcode-actions/release-gate-action@main
         with:
-          product: 'chirag'
-          subProduct: 'cm'
+          product: 'action'
+          subProduct: 'subAction'
           env: 'Production'
           armorcodeHost: 'https://qa.armorcode.ai'
-          mode: 'warn'
+          mode: 'block'
           armorcodeAPIToken: ${{ secrets.ARMORCODE_API_TOKEN }}
           githubToken: ${{ github.token }}
           
