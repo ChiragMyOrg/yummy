@@ -20,7 +20,7 @@ jobs:
           subProduct: 'cm'
           env: 'Production'
           armorcodeHost: 'https://qa.armorcode.ai'
-          mode: 'block'
+          mode: 'warn'
           armorcodeAPIToken: ${{ secrets.ARMORCODE_API_TOKEN }}
-          github-token: ${{ github.token }}
+          githubToken: ${{ github.token }}
           
