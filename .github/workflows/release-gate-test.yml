@@ -14,10 +14,10 @@ jobs:
     steps:  
       - name: Run ArmorCode Release Gate
         id: armorcode_gate
-        uses: ChiragMyOrg/armorcode-actions/release-gate-action@main
+        uses: docker://public.ecr.aws/armor-code/armorcode-release-gate:latest
         with:
-          product: 'chirag'
-          subProduct: 'cm'
+          product: 'action'
+          subProduct: 'subAction'
           env: 'Production'
           armorcodeHost: 'https://qa.armorcode.ai'
           mode: 'block'
