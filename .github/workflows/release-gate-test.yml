@@ -1,26 +1,30 @@
 name: ArmorCode Release Gate
+
+
+env:
+  armorcodehost: https://qa.armorcode.ai
+  product: chirag
+  subProduct: cm
+  environment: Production
+  token: ${{secrets.ARMORCODE_API_TOKEN}}
+  buildTool: GITHUB_ACTIONS
+  buildNumber: ${{github.run_number}}
+  end: 30
+
 on:
+  # Triggers the workflow on push request events
   push:
-  pull_request:
-  workflow_dispatch:
-  
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:  
+
 jobs:
-  release_gate_check: # Update the job name as needed
+  build-chirag:
     runs-on: ubuntu-latest
-    permissions:
-      checks: write     # For writing to the checks tab
-      pull-requests: write  # For commenting on PRs
-      contents: read    # For accessing repo content
-    steps:  
-      - name: Run ArmorCode Release Gate
-        id: armorcode_gate
-        uses: docker://public.ecr.aws/r4h5z0d3/armorcode-release-gate:latest
-        with:
-          product: 'chirag'
-          subProduct: 'cm'
-          env: 'Production'
-          armorcodeHost: 'https://qa.armorcode.ai'
-          mode: 'block'
-          armorcodeAPIToken: ${{ secrets.ARMORCODE_API_TOKEN }}
-          githubToken: ${{ github.token }}
+    # ArmorCode Validation Step
+    steps:
+      - name: ArmorCode Validation
+        run: |
+          wget https://qa.armorcode.ai/static/scripts/slastatus.sh
+          sh slastatus.sh  
+  
           
