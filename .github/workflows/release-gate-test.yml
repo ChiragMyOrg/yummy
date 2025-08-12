@@ -16,11 +16,11 @@ jobs:
         id: armorcode_gate
         uses: docker://public.ecr.aws/r4h5z0d3/armorcode-release-gate:latest
         with:
-          product: 'action'
-          subProduct: 'subAction'
+          product: 'chirag'
+          subProduct: 'cm'
           env: 'Production'
           armorcodeHost: 'https://qa.armorcode.ai'
-          mode: 'block'
+          mode: 'warn'
           armorcodeAPIToken: ${{ secrets.ARMORCODE_API_TOKEN }}
           githubToken: ${{ github.token }}
           
